@@ -15,9 +15,42 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Profile.init({
-    name: DataTypes.STRING,
-    fotoProfile: DataTypes.STRING,
-    bio: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'name cannot be null'
+        },
+        notEmpty: {
+          msg: 'Please fill in name'
+        }
+      }
+    },
+    fotoProfile: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'foto profile cannot be null'
+        },
+        notEmpty: {
+          msg: 'Please fill in foto profile'
+        }
+      }
+    },
+    bio: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'bio cannot be null'
+        },
+        notEmpty: {
+          msg: 'Please fill in bio'
+        }
+      }
+    },
     gender: DataTypes.STRING
   }, {
     sequelize,

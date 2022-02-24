@@ -17,7 +17,7 @@ class ControllerRegister {
         gender
       })
       .then(() => {
-        res.redirect('/login')
+        res.redirect('/profile')
       })
       
       .catch((err) => {

@@ -14,14 +14,10 @@ class ControllerLogin {
         })
         .then(user => {
             if(user) {
+                const isValidPassword = bcrypt.compareSync(password, user.password)
 
-                // console.log(user);
-                // if(bcrypt.compareSync(password, user.password)) {
-                    if(password === user.password) {
-                // console.log('masukganih');
-                    req.session.UserId = user.id
-                    res.redirect('/home')
-                    // return 
+                if(isValidPassword) {
+                    res.redirect(`/profile/${id}`)
                 } else {
                     const err = 'Please input a valid Email or Password'
                     res.redirect(`/login?err=${err}`)
@@ -33,6 +29,7 @@ class ControllerLogin {
         })
         .catch(err => res.send(err)) 
     }
+
 }
 
 module.exports = ControllerLogin 
