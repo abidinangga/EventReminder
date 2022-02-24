@@ -3,16 +3,14 @@
 module.exports = {
   up (queryInterface, Sequelize) {
     
-    return queryInterface.addColumn(
-      'Posts',
-      'UserId',
+    return queryInterface.addColumn('Posts','UserId',
       {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'Users'
+            tableName: 'Users',
+            key: 'id'
           },
-          key: 'id'
         },
         onUpdate: 'cascade',
         onDelete: 'cascade'

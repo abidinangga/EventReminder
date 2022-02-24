@@ -8,27 +8,23 @@
 </head>
 <body>
     <div>
-        <h1>Add New Event</h1>
+        <h1>Edit Your Event</h1>
         <form action="/profile/<%=data.id%>" method="POST">
             <label>Title:</label>
             <br>
-            <input type="text" name="title"/>
+            <input type="text" name="title" value="<%=data.title%>"/>
             <br>
             <label>Content:</label>
             <br>
-            <input type="text" name="content"/>
+            <input type="text" name="content" value="<%=data.content%>"/>
             <br>
             <label>Image Your Event:</label>
             <br>
-            <input type="text" name="imageUrl"/>
-            <br>
-            <label>Like:</label>
-            <br>
-            <input type="number" name="phone_number" value="0"/>
+            <input type="text" name="imageUrl" value="<%=data.imageUrl%>"/>
             <br>
             <label>Reminder:</label>
             <br>
-            <input type="text" name="reminder"/>
+            <input type="text" name="reminder" value="<%=data.reminder%>"/>
             <br>
             <input type="submit" name="submit" value="Submit" />
         </form>
