@@ -6,6 +6,7 @@ module.exports = {
     let data = fs.readFileSync('./data/profile.json','utf8')
     data = JSON.parse(data)
     data.map(el=>{
+      delete el.id
       el.createdAt = new Date()
       el.updatedAt = new Date()
       return el;
@@ -14,6 +15,6 @@ module.exports = {
   },
 
    down (queryInterface, Sequelize) {
-    return queryInterface.bulkDelelte("Profiles",null,{})
+    return queryInterface.bulkDelete("Profiles",null,{})
   }
 };

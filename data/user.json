@@ -1,31 +1,34 @@
 [
     {
+        "id": 1,
         "name":"joko",
         "email":"joko@email.com",
         "password":"123qwe",
-        "gender":"male"
-
+        "gender":"male",
+        "role":"Admin"
     },
     {
+        "id": 2,
         "name":"anwar",
         "email":"anwar@email.com",
         "password":"123qwety",
-        "gender":"male"
-        
-
+        "gender":"male",
+        "role":"User"
     },
     {
+        "id": 3,
         "name":"didi",
         "email":"didi@email.com",
         "password":"456qwe",
-        "gender":"female"
-
+        "gender":"female",
+        "role":"User"
     },
     {
+        "id": 4,
         "name":"mimi",
         "email":"mimi@email.com",
         "password":"987qwe",
-        "gender":"female"
-
+        "gender":"female",
+        "role":"User"
     }
 ]

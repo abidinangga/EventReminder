@@ -1,29 +1,34 @@
 [
     {
+        "id": 1,
         "name":"joko",
         "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
         "bio":"kerja keras bagai kuda",
-        "gender":"male"
+        "gender":"male",
+        "UserId": 1
     },
     {
+        "id": 2,
         "name":"anwar",
         "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
         "bio":"hidup seperti lary",
-        "gender":"male"
-
+        "gender":"male",
+        "UserId": 2
     },
     {
+        "id": 3,
         "name":"didi",
         "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
         "bio":"apa lu liat liat",
-        "gender":"female"
-
+        "gender":"female",
+        "UserId": 3
     },
     {
+        "id": 4,
         "name":"mimi",
         "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
         "bio":"skuyyy",
-        "gender":"female"
-
+        "gender":"female",
+        "UserId": 4
     }
 ]

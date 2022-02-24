@@ -1,58 +1,70 @@
-<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-      <div class="container h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-            <div class="card" style="border-radius: 15px;">
-              <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-  
-                <form>
-  
-                  <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Your Name</label>
-                  </div>
-  
-                  <div class="form-outline mb-4">
-                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example3cg">Your Email</label>
-                  </div>
-  
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cg">Password</label>
-                  </div>
-  
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                  </div>
-  
-                  <div class="form-check d-flex justify-content-center mb-5">
-                    <input
-                      class="form-check-input me-2"
-                      type="checkbox"
-                      value=""
-                      id="form2Example3cg"
-                    />
-                    <label class="form-check-label" for="form2Example3g">
-                      I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                    </label>
-                  </div>
-  
-                  <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                  </div>
-  
-                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
-  
-                </form>
-  
-              </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title ? title : 'Register'  %></title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="/public/style.css"> -->
+
+</head>
+<body>
+    <div class="text-center center-div" id="login">
+        <div class="container w-25 border py-5">
+            <div class="title pb-5">
+                <h2 class="font-weight-bold">Register</h2>
+                <span>Register for the new user</span>
+                <% if(locals.logout){ %>
+                    <div class="alter alert-success text-center">
+                        <%= logout %>
+                    </div>
+                <% } %>
             </div>
-          </div>
+            <form action="/register" method="POST" class="pt-3">
+                <div class="form-group">
+                    <input type="name" class="form-control" placeholder="Name" name="name">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                </div>
+                <div class="form-group">
+                    <input type="gender" class="form-control" placeholder="Gender" name="gender">
+                </div>
+                <button type="submit" class="btn btn-success rounded-pill">Register</button>
+            </form>
+            <p class="text-center text-muted mt-5 mb-0">Already have an account? <a href="/login" class="fw-bold text-body"><u>Login here</u></a></p>
         </div>
-      </div>
     </div>
-  </section>
+</body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: "https://cdn5.f-cdn.com/contestentries/1578585/21468461/5d62b49ac544b_thumb900.jpg";
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.center-div{
+    padding-top: 10%;
+}
+
+.btn.btn-success{
+    padding: .4em 2em;
+}
+
+form{
+    padding: 0 3em;
+}
+
+#login .title > span{
+    font-size: .8em;
+}
+</style>
+</html>
