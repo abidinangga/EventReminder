@@ -11,10 +11,9 @@ app.set('view engine', 'ejs')
 
 app.use(express.urlencoded({extended : true}))
 
-app.use('/',routers)
 
 app.use(session({
-    secret: 'hacktiv8',
+    secret: 'EventReminder',
     resave: false,
     saveUninitilized: false,
     cookie: {
@@ -23,6 +22,7 @@ app.use(session({
     }
 }))
 
+app.use('/',routers)
 
 app.listen(port, function(){
     console.log('running '+ port);

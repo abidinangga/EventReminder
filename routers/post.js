@@ -13,4 +13,3 @@ routerPost.post('/profile/:id/edit', ControllerPost.postAddEdit)
 routerPost.get('/profile/:id/delete', ControllerPost.postDelete)
 
 module.exports = routerPost
-postAddEdit

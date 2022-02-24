@@ -3,7 +3,8 @@ const bcrypt = require('bcryptjs')
 
 class ControllerLogin {
     static login(req, res) {
-        res.render('login')
+        const { error } = req.query
+        res.render('login', { error })
     }
 
     static loginPost(req, res) {
@@ -14,14 +15,10 @@ class ControllerLogin {
         })
         .then(user => {
             if(user) {
+                const isValidPassword = bcrypt.compareSync(password, user.password)
 
-                // console.log(user);
-                // if(bcrypt.compareSync(password, user.password)) {
-                    if(password === user.password) {
-                // console.log('masukganih');
-                    req.session.UserId = user.id
-                    res.redirect('/home')
-                    // return 
+                if(isValidPassword) {
+                    res.redirect('/')
                 } else {
                     const err = 'Please input a valid Email or Password'
                     res.redirect(`/login?err=${err}`)
