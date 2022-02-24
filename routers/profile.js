@@ -4,7 +4,11 @@ const routerProfile = express.Router()
 
 
 
-routerProfile.get('/profile', ControllersProfile.profile)
+routerProfile.get('/profile', ControllersProfile.formprofile)
+
+routerProfile.post('/profile', ControllersProfile.addProfile)
+
+routerProfile.get('/profile/:id', ControllersProfile.profile)
 
 
 module.exports = routerProfile

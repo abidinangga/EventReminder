@@ -18,7 +18,8 @@ class ControllerLogin {
                 const isValidPassword = bcrypt.compareSync(password, user.password)
 
                 if(isValidPassword) {
-                    res.redirect('/')
+                    req.session.UserId = user.id
+                    res.redirect(`/profile/${user.id}`)
                 } else {
                     const err = 'Please input a valid Email or Password'
                     res.redirect(`/login?err=${err}`)
@@ -30,6 +31,7 @@ class ControllerLogin {
         })
         .catch(err => res.send(err)) 
     }
+
 }
 
 module.exports = ControllerLogin 

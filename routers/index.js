@@ -7,17 +7,17 @@ const routerPost = require('./post');
 const routerProfile = require('./profile');
 const routerLogout = require('./logout');
 
-routers.use("/", routerLogin);
-
-routers.use("/", routerRegister);
-
-routers.use("/", routerPost);
-
-routers.use("/", routerProfile);
+routers.use(routerLogin);
 
 routers.get('/', Controller.home);
 
-routers.use("/", routerLogout);
+routers.use(routerRegister);
+
+routers.use(routerPost);
+
+routers.use(routerProfile);
+
+routers.use(routerLogout);
 
 
 

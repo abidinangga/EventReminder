@@ -8,7 +8,7 @@ class ControllerRegister {
 
     static registerPost(req, res) {
         let { name, email, password, gender } = req.body
-
+console.log(req.body);
     User
       .create({
         name,
@@ -16,8 +16,10 @@ class ControllerRegister {
         password,
         gender
       })
-      .then(() => {
-        res.redirect('/profile')
+      .then((Users) => {
+          const UserId = Users.id
+          console.log(UserId);
+        res.redirect(`/profile?id=${UserId}`)
       })
       
       .catch((err) => {

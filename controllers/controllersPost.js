@@ -1,27 +1,42 @@
 const {Profile,Post,User} = require('../models/');
+const { google, outlook, office365, yahoo, ics } = require("calendar-link");
 
 class ControllerPost{
     static post(req,res){
-        Post.findAll()
+        let id = req.session.id
+        console.log(id);
+        let option = {}
+       if (req.query.sort === "reminder"){
+            option.order = [['reminder', 'ASC']]
+        } 
+        Post.findAll(option)
         .then(data =>{
-            res.render("home",{data})
+            res.render("post",{data, id})
         })
         .catch(err=>{
             res.send(err)
         })
     }
 
+    static formpost(req,res){
+        let id=req.body.UserId
+        console.log(id);
+        res.render("postform",{id})
+    }
+
     static postAdd(req,res){
-        let id = +req.params.id
+        let id = req.params.id
+        console.log(id);
         let newData = {
             title:req.body.title,
             content:req.body.content,
             imageUrl:req.body.imageUrl,
             like:0,
-            reminder:req.body.reminder,
+            reminder:req.body.reminder
         }
         Post.create(newData,{where:{id:id}})
         .then(data =>{
+            console.log(data,">>>>>>>>>");
             res.redirect(`/post/${id}`)
         })
         .catch(err=>{
@@ -30,7 +45,7 @@ class ControllerPost{
 
     }
     static postEdit(req,res){
-        let id = +req.params.id
+        let id = req.params.id
         Post.findByPk(id)
         .then(data=>{
             res.render("postformedit",{data})
@@ -41,7 +56,8 @@ class ControllerPost{
     }
     
     static postAddEdit(req,res){
-        let id = +req.params.id
+        // console.log(req.params.id);
+        let id = req.params.id
         let editData = {
             title:req.body.title,
             content:req.body.content,
@@ -50,6 +66,7 @@ class ControllerPost{
         }
         Post.update(editData,{where:{id:id}})
         .then(data =>{
+            console.log(data);
             res.redirect(`/post/${id}`)
         })
         .catch(err=>{
