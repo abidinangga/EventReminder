@@ -1,0 +1,29 @@
+[
+    {
+        "name":"joko",
+        "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
+        "bio":"kerja keras bagai kuda",
+        "gender":"male"
+    },
+    {
+        "name":"anwar",
+        "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
+        "bio":"hidup seperti lary",
+        "gender":"male"
+
+    },
+    {
+        "name":"didi",
+        "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
+        "bio":"apa lu liat liat",
+        "gender":"female"
+
+    },
+    {
+        "name":"mimi",
+        "fotoProfile":"https://i0.wp.com/swastikaadvertising.com/wp-content/uploads/2020/03/download-5.jpg?fit=259%2C194&ssl=1",
+        "bio":"skuyyy",
+        "gender":"female"
+
+    }
+]

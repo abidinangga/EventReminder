@@ -1,0 +1,31 @@
+[
+    {
+        "name":"joko",
+        "email":"joko@email.com",
+        "password":"123qwe",
+        "gender":"male"
+
+    },
+    {
+        "name":"anwar",
+        "email":"anwar@email.com",
+        "password":"123qwety",
+        "gender":"male"
+        
+
+    },
+    {
+        "name":"didi",
+        "email":"didi@email.com",
+        "password":"456qwe",
+        "gender":"female"
+
+    },
+    {
+        "name":"mimi",
+        "email":"mimi@email.com",
+        "password":"987qwe",
+        "gender":"female"
+
+    }
+]
