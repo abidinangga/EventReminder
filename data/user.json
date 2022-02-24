@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name":"joko",
         "email":"joko@email.com",
         "password":"123qwe",
@@ -7,6 +8,7 @@
 
     },
     {
+        "id": 2,
         "name":"anwar",
         "email":"anwar@email.com",
         "password":"123qwety",
@@ -15,6 +17,7 @@
 
     },
     {
+        "id": 3,
         "name":"didi",
         "email":"didi@email.com",
         "password":"456qwe",
@@ -22,6 +25,7 @@
 
     },
     {
+        "id":4,
         "name":"mimi",
         "email":"mimi@email.com",
         "password":"987qwe",
