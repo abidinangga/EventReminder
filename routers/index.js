@@ -1,7 +1,11 @@
 "use strict"
 const Controller = require('../controllers/controllers');
 const routers = require('express').Router();
+const routerLogin = require("./login")
+const routerRegister = require("./register")
 
+routers.use("/", routerLogin);
+routers.use("/", routerRegister);
 
 routers.get('/', Controller.home)
 
