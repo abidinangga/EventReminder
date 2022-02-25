@@ -9,7 +9,7 @@ const routerLogout = require('./logout');
 
 routers.use(routerLogin);
 
-routers.get('/', Controller.home);
+routers.get('/home/:id', Controller.home);
 
 routers.use(routerRegister);
 

@@ -18,8 +18,8 @@ class ControllerLogin {
                 const isValidPassword = bcrypt.compareSync(password, user.password)
 
                 if(isValidPassword) {
-                    req.session.UserId = user.id
-                    res.redirect(`/profile/${user.id}`)
+                    req.session.serId = user.id
+                    res.redirect(`/home/${user.id}`)
                 } else {
                     const err = 'Please input a valid Email or Password'
                     res.redirect(`/login?err=${err}`)

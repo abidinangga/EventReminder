@@ -1,16 +1,19 @@
 const {Profile,Post,User} = require('../models/');
 const { google, outlook, office365, yahoo, ics } = require("calendar-link");
+const {calendar} = require('../helper/reminder');
 
 class ControllerPost{
     static post(req,res){
         let id = req.session.id
-        console.log(id);
+        // console.log(id);
         let option = {}
-       if (req.query.sort === "reminder"){
+        if (req.query.sort === "reminder"){
             option.order = [['reminder', 'ASC']]
         } 
         Post.findAll(option)
         .then(data =>{
+            // console.log(reminder);
+            // let result = calendar(data.reminder)
             res.render("post",{data, id})
         })
         .catch(err=>{
@@ -20,23 +23,22 @@ class ControllerPost{
 
     static formpost(req,res){
         let id=req.body.UserId
-        console.log(id);
+        // console.log(id);
         res.render("postform",{id})
     }
 
     static postAdd(req,res){
         let id = req.params.id
-        console.log(id);
+        // console.log(id);
         let newData = {
             title:req.body.title,
             content:req.body.content,
             imageUrl:req.body.imageUrl,
-            like:0,
             reminder:req.body.reminder
         }
         Post.create(newData,{where:{id:id}})
         .then(data =>{
-            console.log(data,">>>>>>>>>");
+            // console.log(data,">>>>>>>>>");
             res.redirect(`/post/${id}`)
         })
         .catch(err=>{
